@@ -1,6 +1,9 @@
 package utility;
 
+import java.util.Objects;
+
 public class CoinToss {
+
     public enum CoinSide {
         Tails(0.5), Heads(0.5);
 
@@ -17,8 +20,9 @@ public class CoinToss {
         this.coinSide = coinSide;
     }
 
-    public double probability() {
-        return coinSide.probability;
+    public Probability probability() {
+        return new Probability(coinSide.probability);
     }
+
 
 }
