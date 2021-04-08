@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Probability {
 
-    private final double probability;
+    final double probability;
 
     public Probability(double probability) {
         this.probability = probability;

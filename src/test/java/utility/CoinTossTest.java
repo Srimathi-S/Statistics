@@ -11,30 +11,28 @@ public class CoinTossTest {
         CoinToss headsOnToss = new CoinToss(CoinToss.CoinSide.Heads);
         CoinToss tailsOnToss = new CoinToss(CoinToss.CoinSide.Tails);
 
-        Probability headsProbability = headsOnToss.probability();
-        Probability tailsProbability = tailsOnToss.probability();
-
-        assertEquals(headsProbability, tailsProbability);
+        assertEquals(headsOnToss,tailsOnToss);
     }
 
     @Test
     public void testIfProbabilityIsOneFourthForJointProbabilityOfHeadsAndTails() {
         CoinToss headsOnToss = new CoinToss(CoinToss.CoinSide.Heads);
         CoinToss tailsOnToss = new CoinToss(CoinToss.CoinSide.Tails);
-        Probability expectedJointProbability = new Probability(0.25);
+        Probability expectedProbability = new Probability(0.5);
 
-        Probability actualJointProbability = headsOnToss.jointProbability(tailsOnToss);
+        Probability actualProbability = headsOnToss.occursTogether(tailsOnToss);
 
-        assertEquals(expectedJointProbability, actualJointProbability);
+        assertEquals(expectedProbability, actualProbability);
     }
 
     @Test
     public void testIfProbabilityIsOneFourthForJointProbabilityOfHeadsAndHeads() {
         CoinToss headsOnToss = new CoinToss(CoinToss.CoinSide.Heads);
-        Probability expectedJointProbability = new Probability(0.25);
+        Probability expectedProbability = new Probability(0.25);
 
-        Probability actualJointProbability = headsOnToss.jointProbability(headsOnToss);
+        Probability actualProbability = (headsOnToss.occursTogether(headsOnToss));
 
-        assertEquals(expectedJointProbability, actualJointProbability);
+        assertEquals(expectedProbability, actualProbability);
     }
+
 }
