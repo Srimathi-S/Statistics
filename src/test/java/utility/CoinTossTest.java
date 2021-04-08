@@ -15,7 +15,7 @@ public class CoinTossTest {
     }
 
     @Test
-    public void testIfProbabilityIsOneFourthForJointProbabilityOfHeadsAndTails() {
+    public void testIfProbabilityIsHalfForOccurrenceOfHeadsAndTailsTogether() {
         CoinToss headsOnToss = new CoinToss(CoinToss.CoinSide.Heads);
         CoinToss tailsOnToss = new CoinToss(CoinToss.CoinSide.Tails);
         Probability expectedProbability = new Probability(0.5);
@@ -26,7 +26,7 @@ public class CoinTossTest {
     }
 
     @Test
-    public void testIfProbabilityIsOneFourthForJointProbabilityOfHeadsAndHeads() {
+    public void testIfProbabilityIsOneFourthForOccurrenceOfHeadsAndHeadsTogether() {
         CoinToss headsOnToss = new CoinToss(CoinToss.CoinSide.Heads);
         Probability expectedProbability = new Probability(0.25);
 
