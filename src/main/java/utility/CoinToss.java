@@ -1,7 +1,5 @@
 package utility;
 
-import java.util.Objects;
-
 public class CoinToss {
 
     public enum CoinSide {
@@ -24,5 +22,8 @@ public class CoinToss {
         return new Probability(coinSide.probability);
     }
 
+    public Probability jointProbability(CoinToss coinToss) {
+        return new Probability(coinToss.coinSide.probability * coinSide.probability);
+    }
 
 }
