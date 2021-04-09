@@ -11,7 +11,7 @@ public class CoinTossTest {
         CoinToss headsOnToss = new CoinToss(CoinToss.CoinSide.Heads);
         CoinToss tailsOnToss = new CoinToss(CoinToss.CoinSide.Tails);
 
-        assertEquals(headsOnToss,tailsOnToss);
+        assertEquals(headsOnToss, tailsOnToss);
     }
 
     @Test
@@ -35,4 +35,13 @@ public class CoinTossTest {
         assertEquals(expectedProbability, actualProbability);
     }
 
+    @Test
+    void testIfProbabilityOfNotGettingHeadInTossIsHalf() {
+        CoinToss headsOnToss = new CoinToss(CoinToss.CoinSide.Heads);
+        Probability expectedProbability = new Probability(0.5);
+
+        Probability actualProbability = headsOnToss.probabilityOfNotOccurring();
+
+        assertEquals(expectedProbability, actualProbability);
+    }
 }

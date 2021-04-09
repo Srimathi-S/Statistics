@@ -1,6 +1,6 @@
 package utility;
 
-public class CoinToss extends Probability{
+public class CoinToss extends Probability {
 
     public enum CoinSide {
         Tails(0.5), Heads(0.5);
@@ -16,11 +16,11 @@ public class CoinToss extends Probability{
 
     public CoinToss(CoinSide coinSide) {
         super(coinSide.probability);
-        this.coinSide=coinSide;
+        this.coinSide = coinSide;
     }
 
     public Probability occursTogether(CoinToss coinToss) {
-        if(coinToss.coinSide!=this.coinSide)return new Probability(this.probability);
+        if (coinToss.coinSide != this.coinSide) return new Probability(this.probability);
         return new Probability(coinToss.probability * this.probability);
     }
 

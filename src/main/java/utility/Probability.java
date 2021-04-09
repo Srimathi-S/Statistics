@@ -18,6 +18,10 @@ public class Probability {
         return Double.compare(probability.probability, this.probability) == 0;
     }
 
+    public Probability probabilityOfNotOccurring() {
+        return new Probability(1 - probability);
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(probability);
